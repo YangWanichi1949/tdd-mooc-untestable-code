@@ -10,3 +10,11 @@ export function daysUntilChristmas() {
   const diffMillis = christmasDay.getTime() - today.getTime();
   return Math.floor(diffMillis / millisPerDay);
 }
+/*
+Q：What things make the code examples hard to test？
+  
+  This code is hard to test because it directly uses the current system time.
+  The result depends on the actual date when the test is run, so the test may pass today
+  but fail on another day. To make it testable, the current date should be passed in
+  as a parameter or provided through an injectable clock.
+*/

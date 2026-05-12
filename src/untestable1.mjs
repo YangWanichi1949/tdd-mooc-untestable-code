@@ -13,8 +13,7 @@ export function daysUntilChristmas() {
 /*
 Q：What things make the code examples hard to test？
   
-  This code is hard to test because it directly uses the current system time.
-  The result depends on the actual date when the test is run, so the test may pass today
-  but fail on another day. To make it testable, the current date should be passed in
-  as a parameter or provided through an injectable clock.
+  This code is hard to test because it directly uses Math.random().
+  The dice values are different on every execution, so tests cannot reliably predict the output. 
+  To make the code testable, the random number generator should be injected as a dependency.
 */

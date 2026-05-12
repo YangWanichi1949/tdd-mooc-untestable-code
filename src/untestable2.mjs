@@ -15,3 +15,10 @@ export function diceHandValue() {
     return Math.max(die1, die2);
   }
 }
+/*
+Q：What things make the code examples hard to test？
+  
+  1. This code is hard to test because it directly uses Math.random().
+  2. The dice values are different on every execution, so tests cannot reliably predict the output. 
+  3. To make the code testable, the random number generator should be injected as a dependency.
+*/
